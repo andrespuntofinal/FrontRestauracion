@@ -1,0 +1,66 @@
+.fondo{
+
+
+
+margin: auto;
+animation: fondo 10s infinite;
+animation-direction: alternate;
+
+height: 68vh;
+
+
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+@keyframes fondo {
+    0%, 30% {
+
+        background-image: url("/assets/img/logo-iglesia.png") ;
+        opacity: 1;
+
+    }
+
+    31%, 34% {
+
+        opacity: 0.1;
+
+    }
+
+    35%, 65% {
+
+        background-image: url("/assets/img/bienvenidos.png") ;
+        opacity: 1;
+
+    }
+
+    66%, 69% {
+
+        opacity: 0.1;
+
+    }
+
+    70%, 100% {
+
+        opacity: 1;
+        background-image: url("/assets/img/año.png") ;
+        opacity: 1;
+
+    }
+
+
+}
+
+
+.gris{
+
+background: rgba(16, 61, 78, 0.233);
+
+}
+
+.top-nav-collapse{
+
+    background: rgba(67, 136, 201, 0.911)!important;
+    
+    }

@@ -1,0 +1,36 @@
+<div class="row" style="padding-top: 10px;">
+    <div class="col.lg-6">
+        <h3>Lista de asistentes</h3>
+
+    </div>
+
+</div>
+
+<button class="btn btn-primary" type="button" disabled *ngIf="loading">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Loading...
+  </button>
+
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-primary">
+        <th scope="col"></th>
+        <th>Identificacion</th>
+        <th>Nombre Completo</th>
+        <th>Celular</th>
+        <th>Fecha Servicio</th>
+        <th>Horario</th>
+        </tr>   
+    </thead>
+    <tr  *ngFor="let reserva of listReservas, let i = index">
+        <th class="table-light" scope="row">{{ i +1}}</th>
+        <td class="table-light">{{reserva.identificacion}}</td>
+        <td class="table-light">{{reserva.nombre}}</td>
+        <td class="table-light">{{reserva.celular}}</td>
+        <td class="table-light">{{reserva.fechaservicio | date:'dd/MM/yyyy'}}</td>
+        <td class="table-light">{{reserva.horario}}</td>
+    </tr>
+    
+
+</table>
