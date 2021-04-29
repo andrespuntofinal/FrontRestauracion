@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -9,13 +10,15 @@ import { MatRadioModule } from '@angular/material/radio';
   declarations: [],
   imports: [
     CommonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatFormFieldModule
     
     
     
   ],
   exports:[
-    MatRadioModule
+    MatRadioModule,
+    MatFormFieldModule
     
     
     

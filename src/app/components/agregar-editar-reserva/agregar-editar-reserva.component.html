@@ -1,28 +1,41 @@
 <br>
-<div class="container">
+<div class="row" >
+  <br>
+  <br>
+  <br>
+   
+  <div class="col">
+  </div></div>
 
-  <div class="alert alert-primary" role="alert">
-    Domingo 14 de Enero 2021
-  </div>
+<div class="container " style="width: 90rem; ">
 
- 
+  
+
+  <div class="fondoddiv">
+    <h1><label class="terciario">Inscripción Servicio  Domingo 28 de Febrero</label></h1>
+  
+    
 <form [formGroup] = "reservas" (ngSubmit)= "guardarReserva()">
     
   <div class="row">
   
-  <div class="col-sm-3">
+  <div class="col-sm-4">
         
-        <div class="md-form">
-          <input type="text" id="inputMDEx" class="form-control form-control-lg" formControlName="identificacion">
-          <label for="inputLGEx">N° de Identificación</label>
+        <div class="md-form md-outline">
+          <i class="fas fa-id-card prefix white-grey"></i>
+          <input type="text" id="form1" class="form-control text-grey" formControlName="identificacion">
+          <label for="form1">N° de identificación</label>
         </div>
+
+      
         
       </div>
 
       <div class="col-sm-3">
         <br>
         <br>
-        <span class="text-danger sm-4" *ngIf="reservas.get('identificacion').hasError('required') && reservas.get('identificacion').touched">  
+        
+        <span class="badge bg-danger text-dark" *ngIf="reservas.get('identificacion').hasError('required') && reservas.get('identificacion').touched">  
           La identificación es requerida
 
         </span>
@@ -34,10 +47,13 @@
     <div class="row">
 
     <div class="col-sm-6">
-      <div class="md-form">
-        <input type="text" id="inputMDEx" class="form-control form-control-lg" formControlName="nombre">
-        <label for="inputLGEx">Nombre Completo</label>
+      <div class="md-form md-outline">
+        <i class="fas fa-user prefix white-grey"></i>
+        <input type="text" id="form2" class="form-control text-grey" formControlName="nombre">
+        <label for="form2">Nombre Completo</label>
       </div>
+
+  
 
     </div>
 
@@ -45,7 +61,7 @@
       <br>
       <br>
 
-      <span class="text-danger sm-4" *ngIf="reservas.get('nombre').hasError('required') && reservas.get('nombre').touched">   
+      <span class="badge bg-danger text-dark" *ngIf="reservas.get('nombre').hasError('required') && reservas.get('nombre').touched">   
         El nombre es requerido
 
       </span>
@@ -55,12 +71,16 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-3">
-      <div class="md-form">
-        <input type="text" id="inputMDEx" class="form-control form-control-lg" formControlName="celular">
-        <label for="inputLGEx">Número Celular</label>
+    <div class="col-sm-4">
+      <div class="md-form md-outline">
+        <i class="fas fa-mobile prefix white-grey"></i>
+        <input type="text" id="form3" class="form-control text-grey" formControlName="celular">
+        <label for="form3">Número Celular</label>
       </div>
-        <span class="text-danger sm-4" *ngIf="reservas.get('celular').hasError('required')  && reservas.get('celular').touched">   
+
+     
+
+        <span class="badge bg-danger text-dark" *ngIf="reservas.get('celular').hasError('required')  && reservas.get('celular').touched">   
           El celular es requerido
 
         </span>
@@ -68,21 +88,25 @@
       
           
 
-    <div class="col-sm-4">
+    <div class="col-sm-6 ">
       <br>
       <br>
-        <label for="celular" class="col-sm-3 col-form-label">Horario</label>
+      
+      <i class="fas fa-clock white-grey"></i>
+      <label class="text-grey">Horario</label>
+      
 
         
           <mat-radio-group aria-label="Select an option" formControlName="horario">
             <mat-radio-button value="08:00">8:00</mat-radio-button>
+            
             <mat-radio-button value="10:00">10:00</mat-radio-button>
           </mat-radio-group>
         
 
-    
+        
 
-        <span class="text-danger ml-3" *ngIf="reservas.get('horario').hasError('required') && reservas.get('horario').touched"> 
+        <span class="text-danger ml-5" *ngIf="reservas.get('horario').hasError('required') && reservas.get('horario').touched"> 
           Debe seleccionar el horario
 
         </span>
@@ -92,13 +116,18 @@
 
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-5">
       <button  class="btn btn-primary float-right" [disabled] = "reservas.invalid" (clic)="guardarReserva()">Inscribirme</button>
         </div>
         <div class="col-sm-3">
-        <button  class="btn btn-secondary float-left" [routerLink] = "['/home/']">Cancelar</button>
+        <button  class="btn btn-light float-left" [routerLink] = "['/home/']">Cancelar</button>
       </div>
 
     </div>
   </form>
 </div>
+
+
+
+</div>
+

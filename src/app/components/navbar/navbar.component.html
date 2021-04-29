@@ -1,38 +1,59 @@
 <nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top">
-
+  <a (click)="ToInicio()" [routerLink] = "['/home/']" >
+  <img src="/assets/img/logo1.png" alt="" width="55" height="55"  class="d-inline-block align-text-top">
+  </a>
   <div class="container">
     <div class="container-fluid">
- 
       
+       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           
-          <li class="nav-item">
-            <a [routerLink] = "['/home/']" class="nav-link" >Inicio</a>
+          <li class="nav-item" routerLinkActive="active">
+            <a (click)="ToInicio()" [routerLink] = "['/home/']" class="btn" >Inicio</a>
+
+           
           </li>
 
           <li class="nav-item">
-            <a [routerLink] = "['/agregar/']" class="nav-link" >Inscripción Servicios</a>
+            <a (click)="ToNosotros()" [routerLink] = "['/home/']" class="btn" >Nosotros</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Eventos</a>
+            <a (click)="ToServicios()" [routerLink] = "['/home/']" class="btn" >Servicios</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a  [routerLink] = "['/agregar/']" class="btn" >Inscripción Servicios</a>
+          </li>
+
+          <li class="nav-item" >
+            <a class="btn"[routerLink] = "['/home/']">Eventos</a>
+          </li>
+
+          <li class="nav-item" >
+            <a  [routerLink] = "['/paneladmin/']" class="btn"
+                *ngIf="auth.loggedIn"
+            >Admin</a>
+          </li>
+
+          <li class="nav-item" >
+            <a  *ngIf="!auth.loggedIn" (click)="auth.login()" class="btn" >Iniciar sesión</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a  *ngIf="auth.loggedIn" (click)="auth.logout()" class="btn" >Cerrar sesión</a>
           </li>
           
           
         </ul>
 
+   
 
-        <ul class="navbar-nav nav-flex-icons">
 
-          <li class="nav-item">
-
-            <a href="#" class="nav-link">
-              <i class="fab fa-facebook-square"></i>
-
-            </a>
-          </li>
-        </ul>
+     
        
       </div>
     </div>
@@ -45,7 +66,7 @@
 
   <br>
   <div class="cols">
-  <section class="fondo"></section>
+  <!--section class="fondo"></section> -->
 </div>
  
   

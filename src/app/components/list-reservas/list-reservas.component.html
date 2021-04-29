@@ -1,11 +1,15 @@
+<br>
+<br>
+<br>
+
 <div class="row" style="padding-top: 10px;">
-    <div class="col.lg-6">
-        <h3>Lista de asistentes</h3>
+   
+<app-count-reservas [todos]="TotalAsistentes()"
+                    [primer]="TotalPrimer()"
+                    [segundo]="TotalSegundo()"
+                    (countRadioButtonChange)="ReservaCountRadioButtonChange($event)"
 
-    </div>
-
-</div>
-
+></app-count-reservas>
 <button class="btn btn-primary" type="button" disabled *ngIf="loading">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     Loading...
@@ -14,8 +18,8 @@
 <br>
 <table class="table table-striped">
     <thead>
-        <tr class="table-primary">
-        <th scope="col"></th>
+        <tr >
+        
         <th>Identificacion</th>
         <th>Nombre Completo</th>
         <th>Celular</th>
@@ -23,14 +27,15 @@
         <th>Horario</th>
         </tr>   
     </thead>
-    <tr  *ngFor="let reserva of listReservas, let i = index">
-        <th class="table-light" scope="row">{{ i +1}}</th>
+    <ng-container *ngFor="let reserva of listReservas, let i = index">
+    <tr  *ngIf="radioButtonSeleccionado == 'todos' || radioButtonSeleccionado == reserva.horario">
+        
         <td class="table-light">{{reserva.identificacion}}</td>
         <td class="table-light">{{reserva.nombre}}</td>
         <td class="table-light">{{reserva.celular}}</td>
         <td class="table-light">{{reserva.fechaservicio | date:'dd/MM/yyyy'}}</td>
         <td class="table-light">{{reserva.horario}}</td>
     </tr>
-    
+</ng-container>
 
 </table>

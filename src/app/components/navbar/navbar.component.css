@@ -2,65 +2,97 @@
 
 
 
-margin: auto;
-animation: fondo 10s infinite;
-animation-direction: alternate;
+  margin: auto;
+  animation: fondo 10s infinite;
+  animation-direction: alternate;
+  
+  height: 55vh;
+  
+  
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  }
+  
+  @keyframes fondo {
+      0%, 30% {
+  
+          background-image: url("/assets/img/pr2.jpg") ;
+          opacity: 1;
+  
+      }
+  
+      31%, 34% {
+  
+          opacity: 0.1;
+  
+      }
+  
+      35%, 65% {
+  
+          background-image: url("/assets/img/logo-iglesia.png") ;
+          opacity: 1;
+  
+      }
+  
+      66%, 69% {
+  
+          opacity: 0.1;
+  
+      }
+  
+      70%, 100% {
+  
+          opacity: 1;
+          background-image: url("/assets/img/peticiones.png") ;
+          opacity: 1;
+  
+      }
+  
+  
+  }
+  
+  
+  .gris{
+  
+  background: rgba(30, 30, 31, 0.233);
+  
+  }
+  
+  .top-nav-collapse{
+  
+      background: #1f2325!important;
+      
+      }
+  
 
-height: 68vh;
+      .btn{
+        color:rgba(10, 10, 10, 0.973);
+        background:#e7edf0;
+        padding:10px 20px;
+        font-size:10px;
+        text-decoration:none;
+        letter-spacing:1px;
+        text-transform:uppercase;
+      }
 
+      .btn:hover{
+        border:none;
+        background:rgba(0, 0, 0, 0.4);
+        background:#5f87b49d;
+        padding:15px 20px; 
+        color:#f4f7f8;
+      }
 
-background-repeat: no-repeat;
-background-size: cover;
-
-}
-
-@keyframes fondo {
-    0%, 30% {
-
-        background-image: url("/assets/img/logo-iglesia.png") ;
+      .imglog {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        
         opacity: 1;
-
-    }
-
-    31%, 34% {
-
-        opacity: 0.1;
-
-    }
-
-    35%, 65% {
-
-        background-image: url("/assets/img/bienvenidos.png") ;
-        opacity: 1;
-
-    }
-
-    66%, 69% {
-
-        opacity: 0.1;
-
-    }
-
-    70%, 100% {
-
-        opacity: 1;
-        background-image: url("/assets/img/año.png") ;
-        opacity: 1;
-
-    }
-
-
-}
-
-
-.gris{
-
-background: rgba(16, 61, 78, 0.233);
-
-}
-
-.top-nav-collapse{
-
-    background: rgba(67, 136, 201, 0.911)!important;
+        
+      }      
+      
     
-    }

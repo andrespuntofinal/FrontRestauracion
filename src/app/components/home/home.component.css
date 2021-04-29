@@ -1,1 +1,25 @@
+.imgcua {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+    opacity: 1;
+    
+  }
 
+  .imgsomo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
+    opacity: 0.5;
+    
+  } 
+
+
+
+ 
+
+  

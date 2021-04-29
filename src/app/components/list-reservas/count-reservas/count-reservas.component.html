@@ -1,0 +1,23 @@
+<div class="card bg-light">
+    <div class="card-body">
+      <h3><label class="terciario">Informe Asitencia  Domingo 28 de Febrero</label></h3>
+  
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+            type="radio" name="cantidad" id="todos" value="todos" (change)="radioChange()">
+            <label class="form-check-label" for="todos" >Total Inscritos: {{ todos }}</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+            type="radio" name="cantidad" id="ocho" value="08:00" (change)="radioChange()">
+            <label class="form-check-label" for="ocho" >Total Primer servicio: {{ primer }}</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSeleccionado"
+            type="radio" name="cantidad" id="diez" value="10:00" (change)="radioChange()">
+            <label class="form-check-label" for="diez" >Total Segundo servicio:  {{ segundo }}</label>
+          </div>
+
+    </div>
+
+</div>  
