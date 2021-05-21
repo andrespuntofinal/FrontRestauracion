@@ -24,14 +24,14 @@
 
 
 .label {
-  color: rgb(245, 240, 240);
+  color: #5f87b49d;
   padding: 8px;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .principal {background-color: #4bc2e8;} /* Green */
 .secundario {background-color: #f0f4f7;} /* Blue */
-.terciario {background-color: #637480; color:#f0f4f7;} /* Orange */
+.terciario {background-color: #5f87b49d;} /* Orange */
 
 h1 {
 	text-align: center;

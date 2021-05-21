@@ -8,3 +8,6 @@ background: -webkit-linear-gradient(to right, #f5f7f8, #70a9c5, #f5f7f8);  /* Ch
 background: linear-gradient(to right, #1f2325, #1f2325, #1f2325); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

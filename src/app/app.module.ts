@@ -17,11 +17,13 @@ import { VerReservasComponent } from './components/ver-reservas/ver-reservas.com
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module'; 
 
+
 import { CallbackComponent } from './components/callback/callback.component';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { PaneladminComponent } from './components/paneladmin/paneladmin.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
+import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { CreareventosComponent } from './components/creareventos/creareventos.co
     HomeComponent,
     CallbackComponent,
     PaneladminComponent,
-    CreareventosComponent
+    CreareventosComponent,
+    MenuadminComponent
   ],
   imports: [
     BrowserModule,
