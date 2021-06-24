@@ -1,77 +1,25 @@
-.fondo{
 
 
-
-  margin: auto;
-  animation: fondo 10s infinite;
-  animation-direction: alternate;
-  
-  height: 55vh;
-  
-  
-  
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  }
-  
-  @keyframes fondo {
-      0%, 30% {
-  
-          background-image: url("/assets/img/pr2.jpg") ;
-          opacity: 1;
-  
-      }
-  
-      31%, 34% {
-  
-          opacity: 0.1;
-  
-      }
-  
-      35%, 65% {
-  
-          background-image: url("/assets/img/logo-iglesia.png") ;
-          opacity: 1;
-  
-      }
-  
-      66%, 69% {
-  
-          opacity: 0.1;
-  
-      }
-  
-      70%, 100% {
-  
-          opacity: 1;
-          background-image: url("/assets/img/peticiones.png") ;
-          opacity: 1;
-  
-      }
-  
-  
-  }
-  
   
   .gris{
   
-  background:#a6bcd3;
-  height: 55px;
+    background: linear-gradient(to right, #202222, #88929e, #202222); 
+  
+
 
 
   }
   
   .top-nav-collapse{
   
-      background: #1f2325!important;
+    background: linear-gradient(to right, #373a3b, #373a3b, #373a3b)!important;
       
       }
   
 
       .btn{
-        color:rgba(10, 10, 10, 0.973);
-        background:#e8ecee;
+        color:rgba(80, 88, 97, 0.973);
+        background:#f5f7f8;
         padding:10px 20px;
         font-size:10px;
         text-decoration:none;
@@ -79,16 +27,16 @@
         text-transform:uppercase;
         border-top-right-radius: 10px 10px;
         border-bottom-right-radius: 10px 10px;
-        border-top-left-radius: 10px 10px;
-        border-bottom-left-radius: 10px 10px;
+        border: 1px solid rgb(131, 144, 153);
+        
       }
 
       .btn:hover{
         border:none;
-        background:rgba(0, 0, 0, 0.4);
-        background:#64829e ;
+        background:#e5e9f1 ;
         padding:15px 20px; 
-        color:#f4f7f8;
+        color:#939899;
+        border: 1px solid rgb(123, 126, 129);
       }
 
       .imglog {

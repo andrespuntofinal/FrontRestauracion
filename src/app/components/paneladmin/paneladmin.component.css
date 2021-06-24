@@ -1,11 +1,57 @@
 
+.main {
+  margin-left: 60px; /* Same as the width of the sidenav */
+  background-color: rgba(231, 237, 241, 0.973);
+  color: rgb(8, 8, 8);
+  padding: 25px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 55px;
+  left: 0;
+  
+
+  
+}
+
+
+
+
+
+.label {
+  color: rgb(245, 240, 240);
+  
+  
+  
+}
+
+.principal {background-color: #4bc2e8;} /* Green */
+.secundario {background-color: #f0f4f7;} /* Blue */
+.terciario {background-color: #555c5fd5; 
+  color:#f0f4f7; 
+  margin-left: 50px;
+  
+  font-family: 'Roboto', sans-serif;
+  padding: 5px;
+  font-size: 16px;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  border-top-left-radius: 10px 10px;
+  border-bottom-left-radius: 10px 10px;
+  text-shadow: 2px 2px 4px #000000;
+} /* Orange */
+
+
+
 
 .sidenav {
   height: 100%;
   width: 380px;
   position: fixed;
   z-index: 2;
-  top: 80px;
+  top: 54px;
   left: 0;
   
   overflow-x: hidden;
@@ -13,33 +59,21 @@
 }
 
 .sidenav a {
-  padding: 10px 6px 6px 22px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 222px; /* Same as the width of the sidenav */
-  background-color: rgba(231, 237, 241, 0.973);
-  color: rgb(8, 8, 8);
-  padding: 8px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  height: 470px;
-  width: 950px;
-  position: fixed;
-  z-index: 1;
-  top: 55px;
-  left: 0;
-  border-radius: 10px 10px;
-
+  
+  
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+  
+  
+  
   
 }
+
+
+
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -55,8 +89,8 @@
 
 .card{
   width: 220px;
-  height: 420px;
-  background-color: #5f87b49d;
+  height: 470px;
+  background-color: #2a3746;
   border-radius: 10px 10px;
 
   
@@ -65,7 +99,8 @@
 .header{
   border-radius: 10px 10px 0px 0px;
   padding: 5px;
-  background-color: #555c5fd5;
+  background-color: #818b97fa;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 h3{
@@ -96,7 +131,7 @@ h3{
   display: block;
   border-top-right-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px;
-
+  text-shadow: 2px 2px 4px #000000;
 
   
 }
@@ -104,7 +139,7 @@ h3{
 li:hover{
   transition: 1s all;
   color: #2f89fc;
-  background-color: rgba(206, 223, 226, 0.637);
+  background-color:#a6bcd3;
   border-top-right-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px;
   cursor: pointer;
@@ -115,7 +150,7 @@ li:hover{
 }
 
 .body li ul{
-  background: #5f87b49d;
+  background: #2a3746;
   margin-left: 205px;
   margin-top: -38px;
   display: none;
@@ -123,12 +158,8 @@ li:hover{
   border-top-right-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px;
   
-  width: 100%;
-  
-  
- 
- 
-  
+  width: 60%;
+    
 }
 
 .body li:hover > ul{
@@ -139,27 +170,5 @@ li:hover{
 }
 
 
-.label {
-  color: rgb(245, 240, 240);
-  
-  
-  
-}
-
-.principal {background-color: #4bc2e8;} /* Green */
-.secundario {background-color: #f0f4f7;} /* Blue */
-.terciario {background-color: #555c5fd5; 
-  color:#f0f4f7; 
-  margin-left: 350px;
-  
-  font-family: 'Roboto', sans-serif;
-  padding: 5px;
-  font-size: 16px;
-  border-top-right-radius: 10px 10px;
-  border-bottom-right-radius: 10px 10px;
-  border-top-left-radius: 10px 10px;
-  border-bottom-left-radius: 10px 10px;
-  text-shadow: 2px 2px 4px #000000;
-} /* Orange */
 
 

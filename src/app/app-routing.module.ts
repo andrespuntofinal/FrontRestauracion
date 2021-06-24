@@ -7,6 +7,7 @@ import { VerReservasComponent } from './components/ver-reservas/ver-reservas.com
 import { CallbackComponent } from './components/callback/callback.component';
 import { AuthGuard } from './services/auth.guard';
 import { PaneladminComponent } from './components/paneladmin/paneladmin.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
 
 const routes: Routes = [
@@ -24,6 +25,13 @@ const routes: Routes = [
   
   path: 'paneladmin', 
   component: PaneladminComponent,
+  canActivate: [ AuthGuard ]
+
+},
+{ 
+  
+  path: 'eventos', 
+  component: EventosComponent,
   canActivate: [ AuthGuard ]
 
 },

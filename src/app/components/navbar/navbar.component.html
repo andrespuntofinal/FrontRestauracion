@@ -1,72 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top">
   <a (click)="ToInicio()" [routerLink] = "['/home/']" >
-  <img src="/assets/img/logo1.png" alt="" width="52" height="52"  class="d-inline-block align-text-top">
-  </a>
-  <div class="container">
-    <div class="container-fluid">
-      
-       
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <img src="/assets/img/logob.png" alt="" width="52" height="52"  class="d-inline-block align-text-top">
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+      <li class="nav-item" routerLinkActive="active">
+        <a (click)="ToInicio()" [routerLink] = "['/home/']" class="btn" >Inicio</a>
 
         
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-          <li class="nav-item" routerLinkActive="active">
-            <a (click)="ToInicio()" [routerLink] = "['/home/']" class="btn" >Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="ToNosotros()" [routerLink] = "['/home/']" class="btn" >Nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="ToServicios()" [routerLink] = "['/home/']" class="btn" >Servicios</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a  [routerLink] = "['/agregar/']" class="btn" >Inscripción Servicios</a>
+      </li>
 
-           
-          </li>
+      <li class="nav-item" >
+        <a class="btn"[routerLink] = "['/home/']">Eventos</a>
+      </li>
 
-          <li class="nav-item">
-            <a (click)="ToNosotros()" [routerLink] = "['/home/']" class="btn" >Nosotros</a>
-          </li>
+      <li class="nav-item" >
+        <a  [routerLink] = "['/paneladmin/']" class="btn"
+            *ngIf="auth.loggedIn"
+        >Admin</a>
+      </li>
 
-          <li class="nav-item">
-            <a (click)="ToServicios()" [routerLink] = "['/home/']" class="btn" >Servicios</a>
-          </li>
+      <li class="nav-item" >
+        <a  *ngIf="!auth.loggedIn" (click)="auth.login()" class="btn" >Iniciar sesión</a>
+      </li>
 
-          <li class="nav-item" routerLinkActive="active">
-            <a  [routerLink] = "['/agregar/']" class="btn" >Inscripción Servicios</a>
-          </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a  *ngIf="auth.loggedIn" (click)="auth.logout()" class="btn" >Cerrar sesión</a>
+      </li>
 
-          <li class="nav-item" >
-            <a class="btn"[routerLink] = "['/home/']">Eventos</a>
-          </li>
-
-          <li class="nav-item" >
-            <a  [routerLink] = "['/paneladmin/']" class="btn"
-                *ngIf="auth.loggedIn"
-            >Admin</a>
-          </li>
-
-          <li class="nav-item" >
-            <a  *ngIf="!auth.loggedIn" (click)="auth.login()" class="btn" >Iniciar sesión</a>
-          </li>
-
-          <li class="nav-item" routerLinkActive="active">
-            <a  *ngIf="auth.loggedIn" (click)="auth.logout()" class="btn" >Cerrar sesión</a>
-          </li>
-          
-          
-        </ul>
-
-   
-
-
-     
-       
-      </div>
-    </div>
-
-
+    </ul>
   </div>
-
-    
-  </nav>
+</nav>
 
   <br>
-  <div class="cols">
-  <!--section class="fondo"></section> -->
-</div>
- 
+  
   

@@ -1,39 +1,32 @@
 <app-menuadmin></app-menuadmin>
-  
+    
+
   <div class="main">
-      
+    
     <label class="terciario">Creación de Eventos</label>
 
     <br>
-    <br>
-    <br>
+   
+    
     
     <form [formGroup] = "eventos" (ngSubmit)= "guardarEventos()">
     
-      <div class="row">
+      
 
-          <div class="col-sm-4">
-            
-                <mat-form-field appearance="fill">
-                <mat-label>Fecha del evento</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
-                                 
-          </div>
+    
 
-      </div>
         <div class="row">
 
           <div class="col-sm-4">
             
-              <mat-form-field appearance="fill" style="width:300px !important">
-                <mat-label>Nombre Evento</mat-label>
-                <input matInput type="text" >
+              <mat-form-field appearance="" style="width:280px !important">
+                <mat-label class="formula">Nombre Evento</mat-label>
+                <input matInput type="text" class="conte" formControlName="nombreevento">
               </mat-form-field>    
               
           </div>
+
+        
                     
         </div>    
 
@@ -41,20 +34,80 @@
 
           <div class="col-sm-6">
             
-            <mat-form-field appearance="fill" style="width:300px !important">
-              <mat-label>Descripción</mat-label>
-              <textarea matInput ></textarea>
+            <mat-form-field appearance="" style="width:280px !important">
+              <mat-label class="formula">Descripción</mat-label>
+              <textarea matInput class="conte" formControlName="descripcionevento"></textarea>
             </mat-form-field>
                                  
           </div>
 
           
         </div>
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            
+              <mat-form-field appearance="" style="width:280px !important">
+                <mat-label class="formula">Cupo asistentes</mat-label>
+                <input matInput type="number" class="conte" formControlName="asistentesevento">
+              </mat-form-field>    
+              
+          </div>
+                    
+        </div>  
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            
+                <mat-form-field appearance="" style="width:180px !important">
+                <mat-label class="formula">Fecha del evento</mat-label>
+                <input matInput [matDatepicker]="picker" class="conte" formControlName="fechaevento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+                                 
+          </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-sm-4">
+              
+                <mat-form-field appearance="" style="width:180px; background-color: #e5e9f1 !important">
+                  <mat-label class="formula">Hora del evento</mat-label>
+                  <input matInput type="time" class="conte" formControlName="horarioevento">
+                </mat-form-field>    
+                
+            </div>
+
+            <div class="col-sm-1">
+              
+             
+              
+          </div>
+            <div class="col-sm-3">
+              
+              <button  class="myButton" [disabled] = "eventos.invalid" (clic)="guardarEventos()">Aceptar</button>
+              
+          </div>
+
+          <div class="col-sm-2">
+              
+            <button  class="myButton" [routerLink] = "['/home/']">Cancelar</button>   
+            
+        </div>
+             
+          </div>
+
+
+          
           
        
     </form>
         
   </div>
      
-  
   

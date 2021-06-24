@@ -24,6 +24,8 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { PaneladminComponent } from './components/paneladmin/paneladmin.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
+import { ConsultareventosComponent } from './components/consultareventos/consultareventos.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
     CallbackComponent,
     PaneladminComponent,
     CreareventosComponent,
-    MenuadminComponent
+    MenuadminComponent,
+    ConsultareventosComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
