@@ -19,7 +19,7 @@ export class CreareventosComponent implements OnInit {
   listEventos: Eventos[];
   
   idevento:any;
-  accion = 'Crear';
+  accion = 'CREAR';
   
   
   constructor(private fb: FormBuilder, private eventosService:EventosService,  
@@ -47,7 +47,7 @@ export class CreareventosComponent implements OnInit {
 
     if (this.idevento !== undefined ){
 
-      this.accion = 'Editar';
+      this.accion = 'ACTUALIZAR';
       this.obtenerEventos();
     }
 
@@ -55,24 +55,66 @@ export class CreareventosComponent implements OnInit {
 
   guardarEventos(){
 
-    const eventos: Eventos = {
 
-      asistentesevento: parseInt(this.eventos.get("asistentesevento").value),
-      //identificacion: 12345,
-      nombreevento: this.eventos.get("nombreevento").value,
-      descripcionevento: this.eventos.get("descripcionevento").value,
-      fechaevento: this.eventos.get("fechaevento").value,
-      horarioevento: this.eventos.get("horarioevento").value,
-      //horario: "08:00",
 
-    };
+    if (this.idevento !== undefined ){
+      const eventos: Eventos = {
 
-    console.log("param antes llamado:" + eventos);
+        id: parseInt(this.idevento),
+        asistentesevento: parseInt(this.eventos.get("asistentesevento").value),
+        nombreevento: this.eventos.get("nombreevento").value,
+        descripcionevento: this.eventos.get("descripcionevento").value,
+        fechaevento: this.eventos.get("fechaevento").value,
+        horarioevento: this.eventos.get("horarioevento").value,
+       
+  
+      };
+      
+      this.UpdateEventos(eventos);
+    }
+    else {
 
-    this.eventosService.guardarEventos(eventos).subscribe(data =>{
+      const eventos: Eventos = {
 
+        asistentesevento: parseInt(this.eventos.get("asistentesevento").value),
+        nombreevento: this.eventos.get("nombreevento").value,
+        descripcionevento: this.eventos.get("descripcionevento").value,
+        fechaevento: this.eventos.get("fechaevento").value,
+        horarioevento: this.eventos.get("horarioevento").value,
+       
+  
+      };
+     
+
+      this.eventosService.guardarEventos(eventos).subscribe(data =>{
+  
+        Swal.fire({
+          title: 'Creación exitosa del evento',
+          text: this.eventos.get("nombreevento").value,
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        })
+  
+        this.eventos.reset();
+  
+      this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["creareventos"])); 
+  
+      
+  
+      });
+
+    }
+
+   
+  }
+
+  UpdateEventos(eventos: Eventos){
+    console.log("Antes de Update:" + eventos['id']);
+    this.eventosService.actualizarEventos(this.idevento, eventos).subscribe(data =>{
+  
       Swal.fire({
-        title: 'Creación exitosa del evento',
+        title: 'Actualización exitosa del evento',
         text: this.eventos.get("nombreevento").value,
         icon: 'success',
         confirmButtonText: 'Aceptar'
@@ -86,12 +128,11 @@ export class CreareventosComponent implements OnInit {
     
 
     });
+    
   }
-
-
   obtenerEventos(){
 
-    console.log("llamando evento");
+    
 
     this.eventosService.cargarEventos(this.idevento).subscribe(data => {
 

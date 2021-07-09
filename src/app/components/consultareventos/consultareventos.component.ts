@@ -22,7 +22,7 @@ export class ConsultareventosComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;;
-
+  idEv: number;
 
 
   listEventos: Eventos[];
@@ -62,8 +62,12 @@ export class ConsultareventosComponent implements OnInit {
 
   NavegarEvento(id: number) {
 
+    this.idEv= id;
+
+    
+
     this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["/editareventos/id"])); 
+    this.router.navigate(["/editareventos", this.idEv])); 
 
     
     

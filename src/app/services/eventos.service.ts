@@ -47,7 +47,9 @@ export class EventosService {
   }
 
   actualizarEventos(id: number, eventos: Eventos):Observable<Eventos> {
-    return this.http.put<Eventos>(this.myAppUrl + this.myAppUrlApi, eventos, this.httpOptions );
+
+    console.log("ANTES DE UPDATE " + eventos['id']);
+    return this.http.put<Eventos>(this.myAppUrl + this.myAppUrlApi + id, eventos, this.httpOptions);
     
   }
 
