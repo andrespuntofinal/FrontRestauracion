@@ -9,6 +9,7 @@ import { AuthGuard } from './services/auth.guard';
 import { PaneladminComponent } from './components/paneladmin/paneladmin.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
+import { ConsultareventosComponent } from './components/consultareventos/consultareventos.component';
 
 const routes: Routes = [
 { path: 'agregar', component: AgregarEditarReservaComponent},
@@ -39,6 +40,20 @@ const routes: Routes = [
   
   path: 'creareventos', 
   component: CreareventosComponent,
+  canActivate: [ AuthGuard ]
+
+},
+{ 
+  
+  path: 'editareventos/:id', 
+  component: CreareventosComponent,
+  canActivate: [ AuthGuard ]
+
+},
+{ 
+  
+  path: 'consultareventos', 
+  component: ConsultareventosComponent,
   canActivate: [ AuthGuard ]
 
 },

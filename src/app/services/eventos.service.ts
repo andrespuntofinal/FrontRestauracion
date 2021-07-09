@@ -29,7 +29,7 @@ export class EventosService {
     
   }
 
-  deleteReserva(id: number):Observable<Eventos> {
+  deleteEventos(id: number):Observable<Eventos> {
     return this.http.delete<Eventos>(this.myAppUrl + this.myAppUrlApi + id);
     
   }
@@ -41,8 +41,8 @@ export class EventosService {
     
   }
 
-  cargarEventos(id: number):Observable<Eventos> {
-    return this.http.get<Eventos>(this.myAppUrl + this.myAppUrlApi + id );
+  cargarEventos(id: number):Observable<Eventos[]> {
+    return this.http.get<Eventos[]>(this.myAppUrl + this.myAppUrlApi + id );
     
   }
 

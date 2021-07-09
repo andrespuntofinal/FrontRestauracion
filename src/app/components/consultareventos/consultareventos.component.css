@@ -7,7 +7,7 @@
     font-family: 'Roboto', sans-serif;
     
     font-size: 18px;
-    width: 500px;
+    width: 550px;
     position: fixed;
     z-index: 1;
     top: 80px;
@@ -31,8 +31,8 @@
   .secundario {background-color: #f0f4f7;} /* Blue */
   .terciario {background-color: #373a3b; 
     color:#f0f4f7; 
-    margin-left: -11px;
-    margin-top: -30px;
+    margin-left: -10px;
+    margin-top: -300px;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     font-size: 18px;
@@ -42,8 +42,8 @@
     border-top-left-radius: 10px 10px;
    
     text-align: center;
-    width:500px;
-    top: 88px;
+    width:550px;
+    
 	
   } /* Orange */
   
@@ -114,5 +114,18 @@
 
 
   }
-  
+
+  table {
+    width: 100%;
+    
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
   

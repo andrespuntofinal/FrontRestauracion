@@ -16,7 +16,10 @@ export class CreareventosComponent implements OnInit {
 
   eventos: FormGroup;
   fechaserparam = "2021-02-14";
-
+  listEventos: Eventos[];
+  
+  idevento:any;
+  accion = 'Crear';
   
   
   constructor(private fb: FormBuilder, private eventosService:EventosService,  
@@ -32,9 +35,22 @@ export class CreareventosComponent implements OnInit {
       horarioevento: ['', Validators.required],
     })
 
+    const idParam = 'id';
+    this.idevento = this.route.snapshot.params[idParam];
+
+
   }
 
   ngOnInit(): void {
+
+    console.log("EVENTO" + this.idevento);
+
+    if (this.idevento !== undefined ){
+
+      this.accion = 'Editar';
+      this.obtenerEventos();
+    }
+
   }
 
   guardarEventos(){
@@ -64,12 +80,50 @@ export class CreareventosComponent implements OnInit {
 
       this.eventos.reset();
 
-    this.router.navigate(['creareventos']);
+    this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["creareventos"])); 
+
+    
 
     });
   }
-  
 
+
+  obtenerEventos(){
+
+    console.log("llamando evento");
+
+    this.eventosService.cargarEventos(this.idevento).subscribe(data => {
+
+      
+      this.listEventos = data;
+     //console.log(data);
+     console.log(this.listEventos);
+
+
+
+     this.eventos.patchValue({
+      nombreevento: this.listEventos['nombreevento'],
+      descripcionevento: this.listEventos['descripcionevento'],
+      asistentesevento: this.listEventos['asistentesevento'],
+      horarioevento: this.listEventos['horarioevento'],
+      fechaevento: this.listEventos['fechaevento'],
+        
+        
+      });
+
+          
+    });
+    
+   
+    
+  }
+  
+  ngOnDestroy(){
+
+    console.log("DESTRUYENDO");
+
+  }
   
 
 }
