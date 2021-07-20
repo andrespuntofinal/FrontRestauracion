@@ -1,18 +1,5 @@
-<br>
-<div class="row" >
-  <br>
-  <br>
-  <br>
-   
-  <div class="col">
-  </div></div>
-
-<div class="container " style="width: 90rem; ">
-
-  
-
-  <div class="fondoddiv">
-    <h1><label class="terciario">Inscripción Servicio  Domingo 23 de Mayo</label></h1>
+    <div class="fondoddiv">
+    <h1><label class="terciario">Inscripción {{ nomeven }} {{ feceven | date:'MMM d, y'}} {{ horeven }}</label></h1>
   
     
 <form [formGroup] = "reservas" (ngSubmit)= "guardarReserva()">
@@ -131,5 +118,5 @@
 
 
 
-</div>
+
 

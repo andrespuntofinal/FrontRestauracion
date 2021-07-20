@@ -25,8 +25,9 @@
 
 .label {
   color: #5f87b49d;
-  padding: 8px;
+  padding: 20px;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-left: -10px;
 }
 
 .principal {background-color: #4bc2e8;} /* Green */
@@ -34,20 +35,21 @@
 .terciario {background-color: #5f87b49d;} /* Orange */
 
 h1 {
+	
+  margin: 50px;
 	text-align: center;
-	margin: 40px 0 40px;
-	text-align: center;
-	font-size: 25px;
+	
 	color: #ecf0f1;
 	text-shadow: 2px 2px 4px #000000;
 	font-family: 'Cherry Swash', cursive;
+ 
 }
 
 p {
     position: absolute;
     bottom: 20px;
     width: 100%;
-    text-align: center;
+    text-align: left;
     color: #ecf0f1;
     font-family: 'Cherry Swash',cursive;
     font-size: 16px;

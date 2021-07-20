@@ -27,6 +27,7 @@ import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { ConsultareventosComponent } from './components/consultareventos/consultareventos.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { MensajeconfirmacionComponent } from './components/mensajeconfirmacion/mensajeconfirmacion.component';
+import { VereventosComponent } from './components/vereventos/vereventos.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { MensajeconfirmacionComponent } from './components/mensajeconfirmacion/m
     MenuadminComponent,
     ConsultareventosComponent,
     EventosComponent,
-    MensajeconfirmacionComponent
+    MensajeconfirmacionComponent,
+    VereventosComponent
   ],
   imports: [
     BrowserModule,

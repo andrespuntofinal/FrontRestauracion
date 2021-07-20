@@ -13,7 +13,7 @@ import { ConsultareventosComponent } from './components/consultareventos/consult
 
 const routes: Routes = [
 { path: 'agregar', component: AgregarEditarReservaComponent},
-{ path: 'editar/:id', component: AgregarEditarReservaComponent},
+{ path: 'reservarevento/:id,nombre', component: AgregarEditarReservaComponent},
 { path: 'ver/:id', component: VerReservasComponent},
 { 
   

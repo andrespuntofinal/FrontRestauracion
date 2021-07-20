@@ -29,7 +29,7 @@
   
   .principal {background-color: #4bc2e8;} /* Green */
   .secundario {background-color: #f0f4f7;} /* Blue */
-  .terciario {background-color: #373a3b; 
+  .terciario {background: linear-gradient(to right, #01151f, #305a85, #01151f); 
     color:#f0f4f7; 
     margin-left: -11px;
     margin-top: -30px;

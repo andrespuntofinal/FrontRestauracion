@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reserva } from 'src/app/models/reserva';
 import { ReservaService } from 'src/app/services/reserva.service';
 import  Swal from 'sweetalert2';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,10 +16,25 @@ export class AgregarEditarReservaComponent implements OnInit {
 
   reservas: FormGroup;
   fechaserparam = "2021-02-14";
+  nomeven: string;
+  feceven: string;
+  horeven: string;
+ 
 
 
   constructor(private fb: FormBuilder, private reservaService:ReservaService,  
-    private route:ActivatedRoute, private router:Router ) { 
+    private route:ActivatedRoute, private router:Router,
+    public dialogRef: MatDialogRef<AgregarEditarReservaComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+    
+    ) { 
+
+
+    this.nomeven = data.nomeven;  
+    this.feceven = data.feceven;
+    this.horeven = data.horeven;
+
+    console.log ("RE" + this.nomeven)
 
     this.reservas = this.fb.group({
 
@@ -33,6 +49,7 @@ export class AgregarEditarReservaComponent implements OnInit {
   ngOnInit(): void {
 
     
+
     window.scroll(0,220);
   }
 

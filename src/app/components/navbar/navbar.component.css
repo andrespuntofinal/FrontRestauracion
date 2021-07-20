@@ -3,7 +3,7 @@
   
   .gris{
   
-    background: linear-gradient(to right, #202222, #7c8cd1, #202222); 
+    background: linear-gradient(to right, #01151f, #305a85, #01151f); 
   
 
 
@@ -12,14 +12,14 @@
   
   .top-nav-collapse{
   
-    background: linear-gradient(to right, #373a3b, #373a3b, #373a3b)!important;
+    background: linear-gradient(to right, #0a2646, #517297, #0a2646)!important;
   
       }
   
 
       .btn{
-        color:rgba(80, 88, 97, 0.973);
-        background:#f5f7f8;
+        color:rgba(237, 241, 245, 0.973);
+        background:#596d7c;
         padding:10px 20px;
         font-size:10px;
         text-decoration:none;

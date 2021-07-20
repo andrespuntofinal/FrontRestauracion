@@ -32,6 +32,13 @@ document.getElementById("nosotros").scrollIntoView();
     
    }
 
+   ToEventos()
+   {
+ 
+     document.getElementById("eventos").scrollIntoView();
+     
+    }
+
    ToInicio()
    {
  
