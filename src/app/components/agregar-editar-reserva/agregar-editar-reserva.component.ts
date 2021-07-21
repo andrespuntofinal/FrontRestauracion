@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, Inject } from '@angular/core';
+import { Component, OnInit, Input, Output, Inject,LOCALE_ID } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reserva } from 'src/app/models/reserva';
 import { ReservaService } from 'src/app/services/reserva.service';
 import  Swal from 'sweetalert2';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -17,12 +18,12 @@ export class AgregarEditarReservaComponent implements OnInit {
   reservas: FormGroup;
   fechaserparam = "2021-02-14";
   nomeven: string;
-  feceven: string;
+  feceven: any;
   horeven: string;
- 
+  datePipeString : string;
 
 
-  constructor(private fb: FormBuilder, private reservaService:ReservaService,  
+  constructor(@Inject(LOCALE_ID) private locale: string, private fb: FormBuilder, private reservaService:ReservaService,  
     private route:ActivatedRoute, private router:Router,
     public dialogRef: MatDialogRef<AgregarEditarReservaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -41,9 +42,13 @@ export class AgregarEditarReservaComponent implements OnInit {
       identificacion: ['', Validators.required],
       nombre: ['', Validators.required],
       celular: ['', Validators.required],
-      horario: ['', Validators.required],
+      
     })
 
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {
@@ -61,24 +66,26 @@ export class AgregarEditarReservaComponent implements OnInit {
       //identificacion: 12345,
       nombre: this.reservas.get("nombre").value,
       celular: this.reservas.get("celular").value,
-      fechaservicio: new Date(),
-      horario: this.reservas.get("horario").value,
+      fechaservicio: this.feceven,
+      horario: this.horeven,
       //horario: "08:00",
 
     };
 
     console.log("param antes llamado:" + reserva);
 
+    this.datePipeString = formatDate(this.feceven,'MMM d, y',this.locale);
+
     this.reservaService.guardarReserva(reserva).subscribe(data =>{
 
       Swal.fire({
-        title: 'Inscripción Exitosa!',
-        text: this.reservas.get("nombre").value + ' ' + 'Horario: ' + this.reservas.get("horario").value,
+        title: this.reservas.get("nombre").value + ' Tu inscripción fue exitosa!',
+        text: this.nomeven  + ' ' + 'Fecha: ' + this.datePipeString + ' ' + 'Horario: ' + this.horeven,
         icon: 'success',
         confirmButtonText: 'Aceptar'
       })
 
-    this.router.navigate(['/']);
+      this.dialogRef.close();
 
     });
   }

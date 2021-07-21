@@ -10,7 +10,7 @@
         
         <div class="md-form md-outline">
           <i class="fas fa-id-card prefix white-grey"></i>
-          <input type="text" id="form1" class="form-control text-grey" formControlName="identificacion">
+          <input type="text" id="form1" class="form-control text-grey" formControlName="identificacion" style="width:200px !important">
           <label for="form1">N° de identificación</label>
         </div>
 
@@ -36,7 +36,7 @@
     <div class="col-sm-6">
       <div class="md-form md-outline">
         <i class="fas fa-user prefix white-grey"></i>
-        <input type="text" id="form2" class="form-control text-grey" formControlName="nombre">
+        <input type="text" id="form2" class="form-control text-grey" formControlName="nombre" style="width:280px !important">
         <label for="form2">Nombre Completo</label>
       </div>
 
@@ -61,53 +61,34 @@
     <div class="col-sm-4">
       <div class="md-form md-outline">
         <i class="fas fa-mobile prefix white-grey"></i>
-        <input type="text" id="form3" class="form-control text-grey" formControlName="celular">
+        <input type="text" id="form3" class="form-control text-grey" formControlName="celular" style="width:200px !important">
         <label for="form3">Número Celular</label>
       </div>
 
-     
+    </div>
+
+    <div class="col-sm-3">
+      <br>
+      <br>
 
         <span class="badge bg-danger text-dark" *ngIf="reservas.get('celular').hasError('required')  && reservas.get('celular').touched">   
           El celular es requerido
 
         </span>
       </div>
-      
-          
-
-    <div class="col-sm-6 ">
-      <br>
-      <br>
-      
-      <i class="fas fa-clock white-grey"></i>
-      <label class="text-grey">Horario</label>
-      
- 
-        
-          <mat-radio-group aria-label="Select an option" formControlName="horario">
-            <mat-radio-button value="08:00">8:00</mat-radio-button>
-            
-            <mat-radio-button value="10:00">10:00</mat-radio-button>
-          </mat-radio-group>
-        
-
-        
-
-        <span class="text-danger ml-5" *ngIf="reservas.get('horario').hasError('required') && reservas.get('horario').touched"> 
-          Debe seleccionar el horario
-
-        </span>
-      
-      </div>
-     
-
+    
     </div>
+
+
+
     <div class="row">
-      <div class="col-sm-5">
-      <button  class="btn btn-primary float-right" [disabled] = "reservas.invalid" (clic)="guardarReserva()">Inscribirme</button>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-4">
+        
+      <button  class="myButton" [disabled] = "reservas.invalid" (clic)="guardarReserva()">Inscribirme</button>
         </div>
-        <div class="col-sm-3">
-        <button  class="btn btn-light float-left" [routerLink] = "['/home/']">Cancelar</button>
+        <div class="col-sm-4">
+        <button  class="myButton" (click)="onNoClick()">Cancelar</button>
       </div>
 
     </div>

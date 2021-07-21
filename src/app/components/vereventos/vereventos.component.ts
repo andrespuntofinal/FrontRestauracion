@@ -59,7 +59,7 @@ export class VereventosComponent implements OnInit {
 
     const dialogRef = this.dialog.open(AgregarEditarReservaComponent, {
       width: '550px',
-      height: '550px',
+      height: '500px',
       data: {idEv: id, nomeven: nombre, feceven:fechaevento, horeven:horarioevento}
     });
     
