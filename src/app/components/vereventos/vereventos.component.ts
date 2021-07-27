@@ -20,6 +20,7 @@ export class VereventosComponent implements OnInit {
   nomeven: string;
   feceven: string;
   horeven: string;
+  estaevento:number;
   
 
   constructor(private eventosService: EventosService, private router:Router, public dialog: MatDialog) { }
@@ -41,10 +42,11 @@ export class VereventosComponent implements OnInit {
     this.eventosService.getListEventos().subscribe(data => {
 
       
-      this.listEventos = data;
+      this.listEventos = data.filter(list => list.estadoevento === 0);
 
       this.vevento = this.listEventos["nombreevento"];      
-   
+      
+      this.estaevento = this.listEventos["estadoevento"]; 
 
       
     })
@@ -52,7 +54,7 @@ export class VereventosComponent implements OnInit {
 
   }
 
-  InscribirEvento(id: number, nombre: string, fechaevento: string, horarioevento: string) {
+  InscribirEvento(id: number, nombre: string, fechaevento: string, horarioevento: string, estadoevento: number) {
 
 
     console.log("QQQQQQQ" + id + nombre);

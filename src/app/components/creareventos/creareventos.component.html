@@ -7,9 +7,18 @@
     
     <label class="terciario">{{ accion }}  EVENTO</label>
 
-    <br>
-   
-    
+       
+    <div class="row">
+
+      <div class="col-sm-4">
+       
+        <mat-slide-toggle   [(ngModel)]="checked"   class="estado"   (change)="changed()">
+
+</mat-slide-toggle>
+        
+      </div>
+
+    </div>
     
     <form [formGroup] = "eventos" (ngSubmit)= "guardarEventos()">
     
@@ -76,8 +85,7 @@
 
             <div class="col-sm-4">
              
-              <br>
-              <mat-form-field appearance="" style="width:180px !important">
+                <mat-form-field appearance="" style="width:180px !important">
                 <mat-label class="formula">Fecha del evento</mat-label>
                 <input matInput [matDatepicker]="picker" class="conte" formControlName="fechaevento">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -86,8 +94,9 @@
                 
             </div>
 
-              
           </div>
+
+    
 
           <div class="row">
             <div class="col-sm-3">

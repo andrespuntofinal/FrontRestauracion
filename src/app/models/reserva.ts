@@ -6,5 +6,6 @@ export class Reserva {
     celular: string;
     fechaservicio: Date;
     horario: string;
+    idevento: number;
     
 }

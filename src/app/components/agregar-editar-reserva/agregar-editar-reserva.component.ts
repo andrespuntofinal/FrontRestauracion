@@ -20,6 +20,7 @@ export class AgregarEditarReservaComponent implements OnInit {
   nomeven: string;
   feceven: any;
   horeven: string;
+  ideven: number;
   datePipeString : string;
 
 
@@ -34,6 +35,7 @@ export class AgregarEditarReservaComponent implements OnInit {
     this.nomeven = data.nomeven;  
     this.feceven = data.feceven;
     this.horeven = data.horeven;
+    this.ideven  = data.idEv;
 
     console.log ("RE" + this.nomeven)
 
@@ -68,6 +70,7 @@ export class AgregarEditarReservaComponent implements OnInit {
       celular: this.reservas.get("celular").value,
       fechaservicio: this.feceven,
       horario: this.horeven,
+      idevento:this.ideven,
       //horario: "08:00",
 
     };

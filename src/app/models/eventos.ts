@@ -6,5 +6,6 @@ export class Eventos {
     asistentesevento: number;
     fechaevento: Date;
     horarioevento: string;
+    estadoevento: number;
     
 }

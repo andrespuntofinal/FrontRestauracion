@@ -28,7 +28,7 @@ export class CountReservasComponent implements OnInit {
   
   radioChange(): void{
     this.countRadioButtonChange.emit(this.radioButtonSeleccionado);
-
+    console.log("eventoo llamando" + this.radioButtonSeleccionado);
   }
 
 }

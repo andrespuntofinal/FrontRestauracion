@@ -20,6 +20,9 @@ export class CreareventosComponent implements OnInit {
   
   idevento:any;
   accion = 'CREAR';
+  estadoeventoaux: number
+  
+  checked = true;
   
   
   constructor(private fb: FormBuilder, private eventosService:EventosService,  
@@ -33,6 +36,8 @@ export class CreareventosComponent implements OnInit {
       asistentesevento: ['', Validators.required],
       fechaevento: ['', Validators.required],
       horarioevento: ['', Validators.required],
+
+
     })
 
     const idParam = 'id';
@@ -43,7 +48,7 @@ export class CreareventosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("EVENTO" + this.idevento);
+    console.log("EVENTOoo" + this.idevento);
 
     if (this.idevento !== undefined ){
 
@@ -53,11 +58,27 @@ export class CreareventosComponent implements OnInit {
 
   }
 
+  changed(){
+    console.log(this.checked)
+  }
+
   guardarEventos(){
 
+    if (this.checked) {
 
+      this.estadoeventoaux = 0;
+               
+      }
 
+      else {
+        this.estadoeventoaux = 1;        
+
+      }
+
+  
     if (this.idevento !== undefined ){
+     
+      
       const eventos: Eventos = {
 
         id: parseInt(this.idevento),
@@ -66,7 +87,7 @@ export class CreareventosComponent implements OnInit {
         descripcionevento: this.eventos.get("descripcionevento").value,
         fechaevento: this.eventos.get("fechaevento").value,
         horarioevento: this.eventos.get("horarioevento").value,
-       
+        estadoevento:  this.estadoeventoaux,
   
       };
       
@@ -81,6 +102,7 @@ export class CreareventosComponent implements OnInit {
         descripcionevento: this.eventos.get("descripcionevento").value,
         fechaevento: this.eventos.get("fechaevento").value,
         horarioevento: this.eventos.get("horarioevento").value,
+        estadoevento: this.estadoeventoaux,
        
   
       };
@@ -123,7 +145,7 @@ export class CreareventosComponent implements OnInit {
       this.eventos.reset();
 
     this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["creareventos"])); 
+    this.router.navigate(["consultareventos"])); 
 
     
 
@@ -141,8 +163,17 @@ export class CreareventosComponent implements OnInit {
      //console.log(data);
      console.log(this.listEventos);
 
+     
 
+    if (this.listEventos['estadoevento'] === 1){
 
+      console.log("ACTIVOOO");
+
+      this.checked = false;
+
+    };
+
+    
      this.eventos.patchValue({
       nombreevento: this.listEventos['nombreevento'],
       descripcionevento: this.listEventos['descripcionevento'],

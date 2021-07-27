@@ -11,6 +11,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -30,6 +31,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatSortModule,
     MatDialogModule,
     MatButtonModule,
+    MatSlideToggleModule,
     
     
     
@@ -47,6 +49,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatSortModule,
     MatDialogModule,
     MatButtonModule,
+    MatSlideToggleModule,
     
     
     

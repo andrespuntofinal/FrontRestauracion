@@ -1,5 +1,7 @@
+
 <div class="row" style="width: 73rem;" >
     <div *ngFor="let eventos of listEventos, let i = index" class="col-4 card">
+      
         <img class="card-img-top img-fluid" src="/assets/img/{{ i }}.jpg" alt="Card image cap">
 
       <div class="card-body fonev" >
@@ -7,9 +9,10 @@
                <p class="card-text"> {{ eventos.descripcionevento }} </p>
                <p class="card-text"> <b>Fecha: </b>{{ eventos.fechaevento  | date:'MMM d, y'}} </p>
                 <p class="card-text"> <b>Hora: </b> {{ eventos.horarioevento }} </p>
-               <button type="button" (click)=InscribirEvento(eventos.id,eventos.nombreevento,eventos.fechaevento,eventos.horarioevento) class="btn btn-outline-light btn-block">Inscribirme</button>
+               <button type="button" (click)=InscribirEvento(eventos.id,eventos.nombreevento,eventos.fechaevento,eventos.horarioevento,eventos.estadoevento) class="btn">Inscribirme</button>
          
          
              </div>
+            
     </div>
 </div>
