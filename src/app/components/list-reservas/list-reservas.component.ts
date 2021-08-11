@@ -24,15 +24,59 @@ export class ListReservasComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;;
-  idEv: number;
+  idevento:any;
+  nomevento:any;
 
-  constructor(private reservaService:ReservaService, private router:Router) { }
+  constructor(private reservaService:ReservaService, private route:ActivatedRoute, private router:Router) { 
+
+    const idParam = 'id';
+    const nombeve = 'nomb';
+    this.idevento = this.route.snapshot.params[idParam];
+    this.nomevento = this.route.snapshot.params[nombeve];
+
+  }
 
   ngOnInit(): void {
 
+
+    console.log("nomevento" + this.nomevento);
+
+    if (this.idevento !== undefined ){
+
+      
+      this.cargarReservaId();
+    }
+    else{
+
     this.cargarReserva();
+
+    }
+
+   
   }
 
+  cargarReservaId(){
+
+    console.log("EVENTOooIDD");
+
+    this.loading = true;
+    this.reservaService.getListReserva().subscribe(data =>{
+
+      this.loading = false;
+      //this.listReservas = data;
+
+      this.listReservas = data;
+      
+      console.log("this.idevento" + this.idevento );
+
+      this.dataSource = new MatTableDataSource(this.listReservas.filter(list => list.idevento === parseInt(this.idevento)));
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+
+      
+
+    })
+  }
 
   cargarReserva(){
 
@@ -52,19 +96,7 @@ export class ListReservasComponent implements OnInit {
     })
   }
 
-  NavegarEvento(id: number) {
 
-    this.idEv= id;
-
-    
-
-    this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["/editareventos", this.idEv])); 
-
-    
-    
-    
-  }
 
   TotalAsistentes(): number{
 

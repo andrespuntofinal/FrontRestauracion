@@ -10,6 +10,7 @@ import { PaneladminComponent } from './components/paneladmin/paneladmin.componen
 import { EventosComponent } from './components/eventos/eventos.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
 import { ConsultareventosComponent } from './components/consultareventos/consultareventos.component';
+import { EveninscComponent } from './components/eveninsc/eveninsc.component';
 
 const routes: Routes = [
 { path: 'agregar', component: AgregarEditarReservaComponent},
@@ -18,6 +19,13 @@ const routes: Routes = [
 { 
   
   path: 'vertodo', 
+  component: ListReservasComponent,
+  canActivate: [ AuthGuard ]
+
+},
+{ 
+  
+  path: 'vertodoId/:id/:nomb', 
   component: ListReservasComponent,
   canActivate: [ AuthGuard ]
 
@@ -54,6 +62,13 @@ const routes: Routes = [
   
   path: 'consultareventos', 
   component: ConsultareventosComponent,
+  canActivate: [ AuthGuard ]
+
+},
+{ 
+  
+  path: 'eveninsc', 
+  component: EveninscComponent,
   canActivate: [ AuthGuard ]
 
 },

@@ -28,6 +28,7 @@ import { ConsultareventosComponent } from './components/consultareventos/consult
 import { EventosComponent } from './components/eventos/eventos.component';
 import { MensajeconfirmacionComponent } from './components/mensajeconfirmacion/mensajeconfirmacion.component';
 import { VereventosComponent } from './components/vereventos/vereventos.component';
+import { EveninscComponent } from './components/eveninsc/eveninsc.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { VereventosComponent } from './components/vereventos/vereventos.componen
     ConsultareventosComponent,
     EventosComponent,
     MensajeconfirmacionComponent,
-    VereventosComponent
+    VereventosComponent,
+    EveninscComponent
   ],
   imports: [
     BrowserModule,
