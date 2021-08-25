@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Eventos } from '../models/eventos';
+import { Cuposeventos } from 'src/app/models/cuposeventos';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class EventosService {
   //myAppUrl="https://localhost:44358/";
   myAppUrl="http://localhost:9095/";
   myAppUrlApi="api/Eventos/";
+  myAppUrlApiaux="api/Asistentes/";
 
   httpOptions={
 
@@ -26,6 +28,11 @@ export class EventosService {
 
   getListEventos():Observable<Eventos[]>{
     return this.http.get<Eventos[]>(this.myAppUrl + this.myAppUrlApi);
+    
+  }
+
+  getListCuposeventos():Observable<Cuposeventos[]>{
+    return this.http.get<Cuposeventos[]>(this.myAppUrl + this.myAppUrlApiaux);
     
   }
 

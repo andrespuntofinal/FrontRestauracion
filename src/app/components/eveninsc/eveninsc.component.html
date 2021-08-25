@@ -11,33 +11,38 @@
     
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="idevento">
       <th mat-header-cell *matHeaderCellDef> <b>ID</b> </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.idevento}} </td>
     </ng-container>
-   
+
     <ng-container matColumnDef="nombreevento">
       <th mat-header-cell *matHeaderCellDef> <b>EVENTO</b> </th>
       <td mat-cell *matCellDef="let element"> {{element.nombreevento}} </td>
     </ng-container>
 
     <ng-container matColumnDef="fechaevento">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>FECHA</b> </th>
-        <td mat-cell *matCellDef="let element"> {{element.fechaevento | date:'dd/MM/yyyy'}} </td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>FECHA</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaevento | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="horarioevento">
-        <th mat-header-cell *matHeaderCellDef> <b>HORA</b>  </th>
-        <td mat-cell *matCellDef="let element"> {{element.horarioevento}} </td>
-      </ng-container>
+    <ng-container matColumnDef="horarioevento">
+      <th mat-header-cell *matHeaderCellDef> <b>HORA</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.horarioevento}} </td>
+    </ng-container>
 
+    <ng-container matColumnDef="cupooevento">
+      <th mat-header-cell *matHeaderCellDef> <b>CUPO</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.cupooevento}} </td>
+    </ng-container>
+        
 
-     <ng-container matColumnDef="asistentesevento">
-      <th mat-header-cell *matHeaderCellDef>  </th>
+     <ng-container matColumnDef="asistentes">
+      <th mat-header-cell *matHeaderCellDef> <b> ASISTENTES </b> </th>
       <td mat-cell *matCellDef="let element; let i = index"> 
 
-        <button type="button" class="btn" (click)=NavegarEvento(element.id,element.nombreevento) >
-            Inscritos <span class="badge bg-secondary">4</span>
+        <button type="button" class="btn" (click)=NavegarEvento(element.idevento,element.nombreevento) >
+            Inscritos <span class="badge bg-secondary">{{element.asistentes}}</span>
           </button>
 
       </td>

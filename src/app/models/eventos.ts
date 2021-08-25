@@ -7,5 +7,6 @@ export class Eventos {
     fechaevento: Date;
     horarioevento: string;
     estadoevento: number;
+    totalins?: number;
     
 }
