@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Reserva } from '../models/reserva';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ import { Reserva } from '../models/reserva';
 export class ReservaService {
 
   //myAppUrl="https://localhost:44358/";
-  myAppUrl="http://localhost:9095/";
-  myAppUrlApi="api/Reserva/";
+  myAppUrl= environment.myAppUrl ;
+  myAppUrlApi="api/reservas/";
 
   httpOptions={
 

@@ -1,6 +1,6 @@
 export class Eventos {
 
-    id?: number;
+    id?: any;
     nombreevento: string;
     descripcionevento: string;
     asistentesevento: number;

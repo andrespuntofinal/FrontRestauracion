@@ -6,44 +6,62 @@
 
   <label class="terciario">EVENTOS</label>
 
- <br>
- 
-    
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+     
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
 
     <ng-container matColumnDef="idevento">
-      <th mat-header-cell *matHeaderCellDef> <b>ID</b> </th>
-      <td mat-cell *matCellDef="let element"> {{element.idevento}} </td>
+      <th mat-header-cell *matHeaderCellDef style="display:none;">  </th>
+      <td mat-cell *matCellDef="let element" style="display:none;"> {{element.idevento}} </td>
     </ng-container>
 
+
+    
     <ng-container matColumnDef="nombreevento">
-      <th mat-header-cell *matHeaderCellDef> <b>EVENTO</b> </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombreevento}} </td>
+      <th mat-header-cell *matHeaderCellDef style="display:none;">  </th>
+      <td mat-cell *matCellDef="let element"> 
+       
+        <label class="targ">
+          <h3><b>{{element.nombreevento}}</b></h3>
+          {{element.fechaevento | date:'MMM d, y'}}
+          
+          {{element.horarioevento}} <br>Inscritos <a class="btn" (click)=NavegarEvento(element.idevento,element.nombreevento) > {{element.asistentes}}</a>
+          
+          <div *ngIf="(element.cupooevento - element.asistentes)==0">
+            <br>Cupos disponibles <span *ngIf="(element.cupooevento - element.asistentes)==0"  class="badge bg-danger">{{element.cupooevento - element.asistentes}}</span>
+          </div>
+          <div *ngIf="(element.cupooevento - element.asistentes)!==0">
+          <br>Cupos disponibles <span class="badge bg-dark">{{element.cupooevento - element.asistentes}}</span>
+        </div>
+        </label>
+          
+        
+        
+         </td>
     </ng-container>
+  
 
     <ng-container matColumnDef="fechaevento">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>FECHA</b> </th>
-      <td mat-cell *matCellDef="let element"> {{element.fechaevento | date:'dd/MM/yyyy'}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b></b> </th>
+      <td mat-cell *matCellDef="let element" style="display:none;"> {{element.fechaevento | date:'MMM d, y'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="horarioevento">
-      <th mat-header-cell *matHeaderCellDef> <b>HORA</b>  </th>
-      <td mat-cell *matCellDef="let element"> {{element.horarioevento}} </td>
+      <th mat-header-cell *matHeaderCellDef> <b></b>  </th>
+      <td mat-cell *matCellDef="let element" style="display:none;"> {{element.horarioevento}} </td>
     </ng-container>
 
     <ng-container matColumnDef="cupooevento">
-      <th mat-header-cell *matHeaderCellDef> <b>CUPO</b> </th>
-      <td mat-cell *matCellDef="let element"> {{element.cupooevento}} </td>
+      <th mat-header-cell *matHeaderCellDef> <b></b> </th>
+      <td mat-cell *matCellDef="let element" style="display:none;"> {{element.cupooevento}} </td>
     </ng-container>
         
 
      <ng-container matColumnDef="asistentes">
-      <th mat-header-cell *matHeaderCellDef> <b> ASISTENTES </b> </th>
+      <th mat-header-cell *matHeaderCellDef> <b>  </b> </th>
       <td mat-cell *matCellDef="let element; let i = index"> 
 
-        <button type="button" class="btn" (click)=NavegarEvento(element.idevento,element.nombreevento) >
-            Inscritos <span class="badge bg-secondary">{{element.asistentes}}</span>
-          </button>
+
+         
 
       </td>
     </ng-container>
@@ -57,7 +75,7 @@
   
   
   <mat-paginator [length]="100"
-  [pageSize]="5"
+  [pageSize]="2"
   [pageSizeOptions]="[5, 10, 25, 100]">
 </mat-paginator>
 

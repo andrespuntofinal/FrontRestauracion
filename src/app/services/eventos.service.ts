@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Eventos } from '../models/eventos';
 import { Cuposeventos } from 'src/app/models/cuposeventos';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,11 @@ import { Cuposeventos } from 'src/app/models/cuposeventos';
 export class EventosService {
 
   //myAppUrl="https://localhost:44358/";
-  myAppUrl="http://localhost:9095/";
-  myAppUrlApi="api/Eventos/";
-  myAppUrlApiaux="api/Asistentes/";
+
+  
+  myAppUrl= environment.myAppUrl ;
+  myAppUrlApi="api/eventos/";
+  //myAppUrlApiaux="api/Asistentes/";
 
   httpOptions={
 
@@ -31,10 +34,10 @@ export class EventosService {
     
   }
 
-  getListCuposeventos():Observable<Cuposeventos[]>{
-    return this.http.get<Cuposeventos[]>(this.myAppUrl + this.myAppUrlApiaux);
+ // getListCuposeventos():Observable<Cuposeventos[]>{
+    //return this.http.get<Cuposeventos[]>(this.myAppUrl + this.myAppUrlApiaux);
     
-  }
+  //}
 
   deleteEventos(id: number):Observable<Eventos> {
     return this.http.delete<Eventos>(this.myAppUrl + this.myAppUrlApi + id);

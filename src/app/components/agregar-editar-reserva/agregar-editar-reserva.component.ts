@@ -20,7 +20,7 @@ export class AgregarEditarReservaComponent implements OnInit {
   nomeven: string;
   feceven: any;
   horeven: string;
-  ideven: number;
+  ideven: any;
   datePipeString : string;
 
 
@@ -62,6 +62,8 @@ export class AgregarEditarReservaComponent implements OnInit {
 
   guardarReserva(){
 
+    console.log("vvvvv", this.ideven);
+
     const reserva: Reserva = {
 
       identificacion: parseInt(this.reservas.get("identificacion").value),
@@ -83,7 +85,7 @@ export class AgregarEditarReservaComponent implements OnInit {
 
       Swal.fire({
         title: this.reservas.get("nombre").value + ' Tu inscripción fue exitosa!',
-        text: this.nomeven  + ' ' + 'Fecha: ' + this.datePipeString + ' ' + 'Horario: ' + this.horeven,
+        text:  this.nomeven  + ' ' + 'Fecha: ' + this.datePipeString + ' ' + 'Horario: ' + this.horeven + '  Te esperamos! ',
         icon: 'success',
         confirmButtonText: 'Aceptar'
       })

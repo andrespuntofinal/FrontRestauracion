@@ -22,7 +22,7 @@ export class ConsultareventosComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;;
-  idEv: number;
+  idEv: string;
 
 
   listEventos: Eventos[];
@@ -60,7 +60,7 @@ export class ConsultareventosComponent implements OnInit {
     
   }
 
-  NavegarEvento(id: number) {
+  NavegarEvento(id: string) {
 
     this.idEv= id;
 

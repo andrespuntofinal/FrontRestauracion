@@ -9,7 +9,7 @@
                <p class="card-text"> {{ eventos.descripcionevento }} </p>
                <p class="card-text"> <b>Fecha: </b>{{ eventos.fechaevento  | date:'MMM d, y'}} </p>
                 <p class="card-text"> <b>Hora: </b> {{ eventos.horarioevento }} </p>
-               <button type="button" (click)=InscribirEvento(eventos.id,eventos.nombreevento,eventos.fechaevento,eventos.horarioevento,eventos.estadoevento) class="btn">Inscribirme</button>
+               <button type="button" (click)=InscribirEvento(eventos._id,eventos.nombreevento,eventos.fechaevento,eventos.horarioevento,eventos.estadoevento) class="btn">Inscribirme</button>
          
          
              </div>

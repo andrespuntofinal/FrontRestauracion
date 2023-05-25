@@ -1,6 +1,6 @@
 export class Reserva {
 
-    id?: number;
+    id?: any;
     identificacion: number;
     nombre: string;
     celular: string;

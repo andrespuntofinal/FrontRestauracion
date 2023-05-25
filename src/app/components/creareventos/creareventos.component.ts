@@ -81,7 +81,7 @@ export class CreareventosComponent implements OnInit {
       
       const eventos: Eventos = {
 
-        id: parseInt(this.idevento),
+        id: this.idevento,
         asistentesevento: parseInt(this.eventos.get("asistentesevento").value),
         nombreevento: this.eventos.get("nombreevento").value,
         descripcionevento: this.eventos.get("descripcionevento").value,
@@ -107,7 +107,7 @@ export class CreareventosComponent implements OnInit {
   
       };
      
-
+      console.log("ANTES DE GET " + this.eventos);
       this.eventosService.guardarEventos(eventos).subscribe(data =>{
   
         Swal.fire({

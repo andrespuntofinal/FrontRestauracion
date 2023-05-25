@@ -54,20 +54,20 @@ export class EveninscComponent implements OnInit {
   cargarEvento() {
 
 
-    this.eventosService.getListCuposeventos().subscribe(data => {
+   //this.eventosService.getListCuposeventos().subscribe(data => {
 
       
-     console.log("ZZZZZ" + data);
+     console.log("ZZZZZ" );
 
 
-      this.listEventos = data;
-      this.dataSource = new MatTableDataSource(this.listEventos);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+     // this.listEventos = data;
+     // this.dataSource = new MatTableDataSource(this.listEventos);
+     // this.dataSource.paginator = this.paginator;
+     //this.dataSource.sort = this.sort;
 
       
     
-    })
+   // })
 
 
   }
