@@ -10,6 +10,7 @@ import { PaneladminComponent } from './components/paneladmin/paneladmin.componen
 import { EventosComponent } from './components/eventos/eventos.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
 import { ConsultareventosComponent } from './components/consultareventos/consultareventos.component';
+import { ConsultarmiembrosComponent } from './components/consultarmiembros/consultarmiembros.component';
 import { EveninscComponent } from './components/eveninsc/eveninsc.component';
 
 const routes: Routes = [
@@ -65,6 +66,14 @@ const routes: Routes = [
   canActivate: [ AuthGuard ]
 
 },
+{ 
+  
+  path: 'consultarmiembros', 
+  component: ConsultarmiembrosComponent,
+  canActivate: [ AuthGuard ]
+
+},
+
 { 
   
   path: 'eveninsc', 

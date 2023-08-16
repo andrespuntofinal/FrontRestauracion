@@ -1,114 +1,81 @@
-<body><div class="area"></div><nav class="main-menu">
-  <ul>
+<body>
+  <div class="area"></div>
+  <nav class="main-menu">
+    <ul>
       <li>
-          <a [routerLink] = "['/eventos/']">
-              <i class="fa fa-calendar-alt fa-2x"></i>
-              <span class="nav-text">
-                  Eventos
-              </span>
-          </a>
-        
-          <ul>
-              
-              
-            <li>
-              
-              <a  [routerLink] = "['/creareventos/']">
-                <i class="fas fa-pencil-alt icon"></i>
-                <span class="nav-textsm">
-                  Crear Eventos
+        <a [routerLink]="['/consultareventos/']">
+          <i class="fa fa-calendar-alt fa-2x"></i>
+          <span class="nav-text">
+            Eventos
+          </span>
+        </a>
+
+
+      </li>
+
+      <li>
+        <a [routerLink]="['/eventos/']">
+          <i class="fa fa-solid fa-user"></i>
+          <span class="nav-text">
+            Usuarios sistema
+          </span>
+        </a>
+
+
+      </li>
+
+      <li>
+        <a [routerLink]="['/consultarmiembros/']">
+          <i class="fa fa-solid fa-users"></i>
+          <span class="nav-text">
+            Miembros iglesia
+          </span>
+        </a>
+
+
+
+
+      </li>
+
+      <li>
+        <a [routerLink]="['/eventos/']">
+          <i class=" fa fa-solid fa-book"></i>
+          <span class="nav-text">
+            Finanzas
+          </span>
+        </a>
+
+        <ul>
+
+
+          <li>
+
+            <a [routerLink]="['/creareventos/']">
+              <i class="fas fa-pencil-alt icon"></i>
+              <span class="nav-textsm">
+                Registrar ingresos
               </span></a>
-            </li>
+          </li>
 
-            <li>
-              <a  [routerLink] = "['/consultareventos/']">
-                  
-              <i class="fas fa-search icon"></i> <span class="nav-textsm">Consultar Eventos
+          <li>
+            <a [routerLink]="['/consultareventos/']">
+
+              <i class="fas fa-search icon"></i> <span class="nav-textsm">Consultar ingresos
 
               </span></a>
-            </li>
+          </li>
 
-            <li>
-                <a  [routerLink] = "['/vertodo/']">
-                    
-                <i class="fas fa-search icon"></i> <span class="nav-textsm">Consultar Inscripción
-  
-                </span></a>
-              </li>
 
-          </ul>
+
+        </ul>
 
 
       </li>
-      <li class="has-subnav">
-          <a href="#">
-              <i class="fa fa-laptop fa-2x"></i>
-              <span class="nav-text">
-                  Stars Components
-              </span>
-          </a>
-          
-      </li>
-      <li class="has-subnav">
-          <a href="#">
-             <i class="fa fa-list fa-2x"></i>
-              <span class="nav-text">
-                  Forms
-              </span>
-          </a>
-          
-      </li>
-      <li class="has-subnav">
-          <a href="#">
-             <i class="fa fa-folder-open fa-2x"></i>
-              <span class="nav-text">
-                  Pages
-              </span>
-          </a>
-         
-      </li>
-      <li>
-          <a href="#">
-              <i class="fa fa-bar-chart-o fa-2x"></i>
-              <span class="nav-text">
-                  Graphs and Statistics
-              </span>
-          </a>
-      </li>
-      <li>
-          <a href="#">
-              <i class="fa fa-font fa-2x"></i>
-              <span class="nav-text">
-                 Quotes
-              </span>
-          </a>
-      </li>
-      <li>
-         <a href="#">
-             <i class="fa fa-table fa-2x"></i>
-              <span class="nav-text">
-                  Tables
-              </span>
-          </a>
-      </li>
-      <li>
-         <a href="#">
-              <i class="fa fa-map-marker fa-2x"></i>
-              <span class="nav-text">
-                  Maps
-              </span>
-          </a>
-      </li>
-      <li>
-          <a href="#">
-             <i class="fa fa-info fa-2x"></i>
-              <span class="nav-text">
-                  Documentation
-              </span>
-          </a>
-      </li>
-  </ul>
 
-  
-</nav>
+
+
+    </ul>
+
+
+  </nav>
 </body>

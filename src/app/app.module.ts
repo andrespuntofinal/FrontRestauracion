@@ -23,8 +23,10 @@ import { CallbackComponent } from './components/callback/callback.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { PaneladminComponent } from './components/paneladmin/paneladmin.component';
 import { CreareventosComponent } from './components/creareventos/creareventos.component';
+import { CrearmiembrosComponent } from './components/crearmiembros/crearmiembros.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { ConsultareventosComponent } from './components/consultareventos/consultareventos.component';
+import { ConsultarmiembrosComponent } from './components/consultarmiembros/consultarmiembros.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { MensajeconfirmacionComponent } from './components/mensajeconfirmacion/mensajeconfirmacion.component';
 import { VereventosComponent } from './components/vereventos/vereventos.component';
@@ -43,8 +45,10 @@ import { EveninscComponent } from './components/eveninsc/eveninsc.component';
     CallbackComponent,
     PaneladminComponent,
     CreareventosComponent,
+    CrearmiembrosComponent,
     MenuadminComponent,
     ConsultareventosComponent,
+    ConsultarmiembrosComponent,
     EventosComponent,
     MensajeconfirmacionComponent,
     VereventosComponent,

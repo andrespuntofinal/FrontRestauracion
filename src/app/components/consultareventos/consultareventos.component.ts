@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Eventos } from 'src/app/models/eventos';
+import { CreareventosComponent } from 'src/app/components/creareventos/creareventos.component';
 import { EventosService } from 'src/app/services/eventos.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -62,13 +63,16 @@ export class ConsultareventosComponent implements OnInit {
 
   NavegarEvento(id: string) {
 
-    this.idEv= id;
+    //this.idEv= id;
+   
+    //this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
+    //this.router.navigate(["/editareventos", this.idEv])); 
 
-    
-
-    this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
-    this.router.navigate(["/editareventos", this.idEv])); 
-
+    const dialogRef = this.dialog.open(CreareventosComponent, {
+      width: '620px',
+      height: '520px',
+      data: {idEv: id}
+    });
     
     
     
@@ -78,15 +82,25 @@ export class ConsultareventosComponent implements OnInit {
 
     this.eventosService.getListEventos().subscribe(data => {
 
-      console.log("data  " + data);
+      
       this.listEventos = data;
       this.dataSource = new MatTableDataSource(this.listEventos);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
 
-      
+            
     })
 
+
+  }
+
+  CrearEventos(){
+
+    const dialogRef = this.dialog.open(CreareventosComponent, {
+      width: '620px',
+      height: '520px',
+      data: {idEv:0}
+    });
 
   }
 

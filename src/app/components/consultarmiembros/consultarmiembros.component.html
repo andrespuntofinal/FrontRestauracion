@@ -1,0 +1,122 @@
+<app-menuadmin></app-menuadmin>
+
+<div class="main">
+
+  <label class="terciario"><i class="fa fa-solid fa-users"></i>&nbsp;&nbsp;MIEMBROS IGLESIA</label>
+
+ <br>
+ 
+    
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef >  </th>
+        <td mat-cell *matCellDef="let element">  </td>
+      </ng-container>
+    <!-- Position Column -->
+     <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> <b>NOMBRE </b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}}   </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>EMAIL</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="celular">
+      <th mat-header-cell *matHeaderCellDef> <b>CEL</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.celular}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+     
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef> <b>TEL</b>  </th>
+      <td>..</td>
+      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    
+    <ng-container matColumnDef="direccion">
+      <th mat-header-cell *matHeaderCellDef> <b>DIR</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="barrio">
+      <th mat-header-cell *matHeaderCellDef> <b>BARRIO</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.barrio}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+   
+    <ng-container matColumnDef="poblacion">
+      <th mat-header-cell *matHeaderCellDef> <b>POBLACIÓN</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.poblacion}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="estado_civil">
+      <th mat-header-cell *matHeaderCellDef> <b>ESTADO CIV</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.estado_civil}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="fecha_nacimiento">
+      <th mat-header-cell *matHeaderCellDef> <b>NACIMIENTO</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="tipo_miembro">
+      <th mat-header-cell *matHeaderCellDef> <b>TIPO</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.tipo_miembro}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="ministerio">
+      <th mat-header-cell *matHeaderCellDef> <b>MINISTERIO</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.ministerio}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="bautizado">
+      <th mat-header-cell *matHeaderCellDef> <b>BAUTIZADO</b>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.bautizado}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ACCION</b> </th>
+      <td mat-cell *matCellDef="let element; let i = index"> 
+        <a class="pointer" (click)=NavegarMiembro(element._id)  style="color: #7393a5;">
+          <i class="fas fa-edit" data-toggle="tooltip" title="Modificar"></i>
+        </a>
+        <a (click)=eliminarMiembro(element._id)  class="pointer" style="color: #9caab1;">
+          <i class="fas fa-trash" data-toggle="tooltip" title="Eliminar"></i>
+        </a>
+      </td>
+    </ng-container>
+  
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+  <mat-paginator [length]="100"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+<br>
+<div class="col-sm-5" >
+                 
+  <button type="button" (click)=CrearMiembros() class="myButton">Crear usuario</button>
+         
+</div> 
+  </div>

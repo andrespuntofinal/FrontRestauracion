@@ -1,6 +1,6 @@
 export class Cuposeventos {
 
-    idevento?: number;
+    idevento?: any;
     nombreevento: string;
     fechaevento: Date;
     horarioevento: string;

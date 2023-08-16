@@ -1,17 +1,17 @@
   
   .main {
     margin-left: 60px; /* Same as the width of the sidenav */
-    background-color:#e9edf6;
+    background-color:#e5e9f1;
     color: rgb(8, 8, 8);
     padding: 10px;
     font-family: 'Roboto', sans-serif;
     
     font-size: 18px;
-    width: 515px;
+    width: 1000px;
     position: fixed;
     z-index: 1;
     top: 80px;
-    left:   330px;
+    left:   130px;
     border-top-right-radius: 10px 10px;
     border-bottom-right-radius: 10px 10px;
     border-top-left-radius: 10px 10px;
@@ -29,10 +29,10 @@
   
   .principal {background-color: #4bc2e8;} /* Green */
   .secundario {background-color: #f0f4f7;} /* Blue */
-  .terciario {background: linear-gradient(to right, #01151f, #305a85, #01151f); 
+  .terciario {background: linear-gradient(to right, #01151f, #305a85, #01151f);
     color:#f0f4f7; 
-    margin-left: -11px;
-    margin-top: -30px;
+    margin-left: -10px;
+    margin-top: -300px;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     font-size: 16px;
@@ -42,8 +42,8 @@
     border-top-left-radius: 10px 10px;
    
     text-align: center;
-    width:515px;
-    top: 88px;
+    width:1000px;
+    
 	
   } /* Orange */
   
@@ -54,18 +54,15 @@
     
     font-size: 16px;
     
-    
-    
 	
   } 
 
   .conte { 
-    color:#5c6d72; 
+    color:#121213; 
     
     font-family: 'Roboto', sans-serif;
     
-    font-size: 16px;
-    
+    font-size: 18px;
     
 	
   } 
@@ -109,11 +106,26 @@
     position:relative;
     top:1px;
   }
-  
-  .estado{
-    margin: 8px 0;
-    display: block;
-    color:#939fa5; 
+
+  .far{
+
+    cursor: pointer;
+    margin-right: 7px;
+
+
+  }
+
+  table {
+    width: 100%;
     
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .pointer {
+    cursor: pointer;
   }
   

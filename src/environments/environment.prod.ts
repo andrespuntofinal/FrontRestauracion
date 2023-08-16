@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  myAppUrl: 'http://localhost:9095/'
+  //myAppUrl: 'https://api-restauracion-xlkpbk5ahq-uc.a.run.app/'
+  myAppUrl:'http://localhost:8080/'
 };

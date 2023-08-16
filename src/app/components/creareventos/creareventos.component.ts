@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject,LOCALE_ID } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {FormControl} from '@angular/forms';
@@ -6,6 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { Eventos } from 'src/app/models/eventos';
 import { EventosService } from 'src/app/services/eventos.service';
 import  Swal from 'sweetalert2';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-creareventos',
@@ -25,7 +26,9 @@ export class CreareventosComponent implements OnInit {
   checked = true;
   
   
-  constructor(private fb: FormBuilder, private eventosService:EventosService,  
+  constructor(@Inject(LOCALE_ID) private locale: string, private fb: FormBuilder, private eventosService:EventosService,
+    public dialogRef: MatDialogRef<CreareventosComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,  
     private route:ActivatedRoute, private router:Router )
   { 
 
@@ -41,7 +44,7 @@ export class CreareventosComponent implements OnInit {
     })
 
     const idParam = 'id';
-    this.idevento = this.route.snapshot.params[idParam];
+    this.idevento = data.idEv;;
 
 
   }
@@ -50,7 +53,7 @@ export class CreareventosComponent implements OnInit {
 
     console.log("EVENTOoo" + this.idevento);
 
-    if (this.idevento !== undefined ){
+    if (this.idevento !== 0 ){
 
       this.accion = 'ACTUALIZAR';
       this.obtenerEventos();
@@ -76,7 +79,7 @@ export class CreareventosComponent implements OnInit {
       }
 
   
-    if (this.idevento !== undefined ){
+    if (this.idevento !== 0 ){
      
       
       const eventos: Eventos = {
@@ -120,7 +123,7 @@ export class CreareventosComponent implements OnInit {
         this.eventos.reset();
   
       this.router.navigateByUrl('consultareventos', {skipLocationChange: true}).then(()=>
-      this.router.navigate(["creareventos"])); 
+      this.router.navigate(["consultareventos"])); 
   
       
   
@@ -195,6 +198,11 @@ export class CreareventosComponent implements OnInit {
 
     console.log("DESTRUYENDO");
 
+  }
+
+  onNoClick(): void {
+
+    this.dialogRef.close();
   }
   
 

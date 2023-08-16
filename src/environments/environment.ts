@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  myAppUrl: 'http://localhost:9098/'
+  //myAppUrl: 'https://api-restauracion-xlkpbk5ahq-uc.a.run.app/'
+  myAppUrl:'http://localhost:8080/'
 };
 
 /*
