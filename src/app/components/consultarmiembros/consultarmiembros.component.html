@@ -2,10 +2,16 @@
 
 <div class="main">
 
-  <label class="terciario"><i class="fa fa-solid fa-users"></i>&nbsp;&nbsp;MIEMBROS IGLESIA</label>
+  <label class="terciario">MIEMBROS IGLESIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a (click)=CrearMiembros()>
+      <i class="fa fa-solid fa-plus" data-toggle="tooltip" title="Crear miembro"></i></a></label>
+    
+   
+ <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Nombre" #input>
+</mat-form-field>
 
- <br>
- 
+ <div class="mat-elevation-z8">
     
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
@@ -18,50 +24,33 @@
       </ng-container>
     <!-- Position Column -->
      <ng-container matColumnDef="nombre">
-      <th mat-header-cell *matHeaderCellDef> <b>NOMBRE </b> </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>NOMBRE </b> </th>
       <td mat-cell *matCellDef="let element"> {{element.nombre}}   </td>
     </ng-container>
   
-    <!-- Name Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>EMAIL</b> </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-    </ng-container>
-  
+    
     <!-- Weight Column -->
     <ng-container matColumnDef="celular">
-      <th mat-header-cell *matHeaderCellDef> <b>CEL</b>  </th>
+      <th mat-header-cell *matHeaderCellDef> <b>CELULAR</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.celular}} </td>
     </ng-container>
-    <!-- Weight Column -->
-     
-    <ng-container matColumnDef="telefono">
-      <th mat-header-cell *matHeaderCellDef> <b>TEL</b>  </th>
-      <td>..</td>
-      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
-    </ng-container>
-    <!-- Weight Column -->
     
-    <ng-container matColumnDef="direccion">
-      <th mat-header-cell *matHeaderCellDef> <b>DIR</b>  </th>
-      <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
-    </ng-container>
     <!-- Weight Column -->
 
     <ng-container matColumnDef="barrio">
-      <th mat-header-cell *matHeaderCellDef> <b>BARRIO</b>  </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>BARRIO</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.barrio}} </td>
     </ng-container>
     <!-- Weight Column -->
    
     <ng-container matColumnDef="poblacion">
-      <th mat-header-cell *matHeaderCellDef> <b>POBLACIÓN</b>  </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>POBLACIÓN</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.poblacion}} </td>
     </ng-container>
     <!-- Weight Column -->
 
     <ng-container matColumnDef="estado_civil">
-      <th mat-header-cell *matHeaderCellDef> <b>ESTADO CIV</b>  </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ESTADO CIV</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.estado_civil}} </td>
     </ng-container>
     <!-- Weight Column -->
@@ -73,19 +62,19 @@
     <!-- Weight Column -->
 
     <ng-container matColumnDef="tipo_miembro">
-      <th mat-header-cell *matHeaderCellDef> <b>TIPO</b>  </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>TIPO</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.tipo_miembro}} </td>
     </ng-container>
     <!-- Weight Column -->
 
     <ng-container matColumnDef="ministerio">
-      <th mat-header-cell *matHeaderCellDef> <b>MINISTERIO</b>  </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>MINISTERIO</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.ministerio}} </td>
     </ng-container>
     <!-- Weight Column -->
 
     <ng-container matColumnDef="bautizado">
-      <th mat-header-cell *matHeaderCellDef> <b>BAUTIZADO</b>  </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>BAUTIZADO</b>  </th>
       <td mat-cell *matCellDef="let element"> {{element.bautizado}} </td>
     </ng-container>
     <!-- Weight Column -->
@@ -107,16 +96,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  
+</div>
   
   <mat-paginator [length]="100"
   [pageSize]="5"
   [pageSizeOptions]="[5, 10, 25, 100]">
 </mat-paginator>
 <br>
-<div class="col-sm-5" >
-                 
-  <button type="button" (click)=CrearMiembros() class="myButton">Crear usuario</button>
-         
-</div> 
+
   </div>

@@ -4,9 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgregarEditarReservaComponent } from './components/agregar-editar-reserva/agregar-editar-reserva.component';
@@ -16,7 +13,6 @@ import { CountReservasComponent } from './components/list-reservas/count-reserva
 import { VerReservasComponent } from './components/ver-reservas/ver-reservas.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module'; 
-
 
 import { CallbackComponent } from './components/callback/callback.component';
 
@@ -62,6 +58,7 @@ import { EveninscComponent } from './components/eveninsc/eveninsc.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    
 
     // Import the module into the application, with configuration
     AuthModule.forRoot({

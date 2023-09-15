@@ -7,11 +7,11 @@
     font-family: 'Roboto', sans-serif;
     
     font-size: 18px;
-    width: 1000px;
+    width: 1100px;
     position: fixed;
     z-index: 1;
     top: 80px;
-    left:   130px;
+    left: 80px;
     border-top-right-radius: 10px 10px;
     border-bottom-right-radius: 10px 10px;
     border-top-left-radius: 10px 10px;
@@ -42,7 +42,7 @@
     border-top-left-radius: 10px 10px;
    
     text-align: center;
-    width:1000px;
+    width:1100px;
     
 	
   } /* Orange */

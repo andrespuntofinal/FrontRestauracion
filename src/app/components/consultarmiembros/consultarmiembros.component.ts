@@ -18,7 +18,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ConsultarmiembrosComponent implements OnInit {
 
-  displayedColumns: string[] = ['id','nombre', 'email', 'celular', 'telefono', 'direccion', 'barrio', 'poblacion', 'estado_civil', 
+  displayedColumns: string[] = ['id','nombre', 'celular', 'barrio', 'poblacion', 'estado_civil', 
   'fecha_nacimiento', 'tipo_miembro', 'ministerio', 'bautizado', 'acciones'];
   dataSource = new MatTableDataSource();
 
@@ -99,5 +99,15 @@ export class ConsultarmiembrosComponent implements OnInit {
     });
 
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
 
 }
